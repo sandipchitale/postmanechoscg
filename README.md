@@ -1,7 +1,12 @@
 # Spring Cloud Gateway to Postman Echo service
 
-A simple Spring Cloud Gateway application that routes requests to the Postman Echo service. It automatically appneds
+- A simple Spring Cloud Gateway application that routes requests to the Postman Echo service. It automatically appends
 the `method` of the request to the Postman Echo URL `https://postman-echo.com/{method}`.
+
+- Supports per request timeout by using  `X-TIMEOUT-MILLIS` header. If the header is not present, the default timeout is used.
+
+- Converts `ReadTimeoutException` into `HttpStatus.GATEWAY_TIMEOUT` response.
+
 
 ### Reference Documentation
 For further reference, please consider the following sections:
